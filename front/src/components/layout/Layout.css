@@ -1,0 +1,106 @@
+/* components/layout/Layout.css */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-brand a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.navbar-menu {
+  margin-left: auto;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-menu a {
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.navbar-menu a:hover {
+  background-color: var(--secondary-color);
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 64px;
+  bottom: 0;
+  width: 240px;
+  background-color: white;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  z-index: 900;
+}
+
+.sidebar-content {
+  padding: 20px;
+}
+
+.sidebar-section {
+  margin-bottom: 20px;
+}
+
+.sidebar-section h3 {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+.sidebar-section a {
+  display: block;
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 8px 0;
+  font-size: 0.9rem;
+}
+
+.sidebar-section a:hover {
+  color: var(--primary-color);
+}
+
+.footer {
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+      padding: 0 10px;
+  }
+
+  .navbar-menu {
+      display: none;
+  }
+
+  .sidebar {
+      transform: translateX(-100%);
+      transition: transform 0.3s;
+  }
+
+  .sidebar.active {
+      transform: translateX(0);
+  }
+}
